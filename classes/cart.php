@@ -8,22 +8,46 @@ class Cart {
     private $products = [];
     private $payment;
     private $totalPrice = 0;
+    protected $isPrimeUser;
 
-    function __construct($user) {
+    function __construct($user, $isPrimeUser) {
         $this->user = $user;
+        $this->isPrimeUser = $isPrimeUser;
     }
 
     function addProduct($product) {
         $this->products[] = $product;
     }
 
-    function findTotalPrice() {
+    function calcDiscount($totalAmount) {
+        $toReturn = 0;
 
-        foreach($this->products as $product) {
-            $this->totalPrice += $product->price;
+        if($this->isPrimeUser) {
+            $toReturn = $totalAmount - (($totalAmount * 20) / 100);
+
+            return $toReturn; 
+        } else {
+
+            return $toReturn = $totalAmount;
         }
 
-        $this->totalPrice;
     }
 
+    function findTotalPrice() {
+
+        $spesaTotale = 0;
+
+        foreach($this->products as $product) {
+            $spesaTotale += $product->price;
+        }
+        
+        var_dump($spesaTotale);
+
+        $spesaTotaleScontata = $this->calcDiscount($spesaTotale);
+
+        var_dump($spesaTotaleScontata);
+
+        $this->totalPrice = $spesaTotaleScontata;
+       
+    }
 }

@@ -18,9 +18,9 @@ require_once("./classes/product.php");
 require_once("./classes/products/smartTV.php");
 
 
-//$user = new User("steFerre", "pinco@gmail.com");
+//$user = new User("pincoPal", "pinco@gmail.com");
 
-$userPrime = new PrimeUser("steFerre", "pinco@gmail.com");
+$userPrime = new PrimeUser("pincoPal", "pinco@gmail.com");
 
 $tv = new SmartTV("Samsung Serie 7", 1, 379.99, "UE43TU7090U", "Samsung");
 $tv2 = new SmartTV("LG UHD TV", 1, 449.90, "43UP78006LB", "LG");
@@ -28,7 +28,7 @@ $tv2 = new SmartTV("LG UHD TV", 1, 449.90, "43UP78006LB", "LG");
 
 //$userPrime->setDiscount(379.99);
 
-$carrello = new Cart($userPrime);
+$carrello = new Cart($userPrime, false);
 $carrello->addProduct($tv);
 $carrello->addProduct($tv2);
 //$carrello->addProduct($tv);
