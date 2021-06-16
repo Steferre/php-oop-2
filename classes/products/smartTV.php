@@ -1,10 +1,11 @@
 <?php
-
+require_once(__DIR__ . "/../product.php");
 class SmartTV extends Product {
     protected $model;
     protected $brand;
     protected $band = '4G';
-     function __construct($name, $quantity, $price, $model, $brand) {
+
+    function __construct($name, $quantity, $price, $model, $brand) {
         parent::__contruct($name, $quantity, $price);
 
         $this->setModel($model);
@@ -26,5 +27,7 @@ class SmartTV extends Product {
     public function getBrand() {
         return $this->brand;
     }
+
+    
 
 }

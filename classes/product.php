@@ -3,7 +3,7 @@
 class Product {
    protected $name;
    protected $quantity;
-   protected $price;
+   public $price;
    
    function __contruct($name, $quantity, $price){
         $this->setName($name);
