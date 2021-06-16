@@ -41,11 +41,11 @@ class Cart {
             $spesaTotale += $product->price;
         }
         
-        var_dump($spesaTotale);
+        //var_dump($spesaTotale);
 
         $spesaTotaleScontata = $this->calcDiscount($spesaTotale);
 
-        var_dump($spesaTotaleScontata);
+        //var_dump($spesaTotaleScontata);
 
         $this->totalPrice = $spesaTotaleScontata;
        
