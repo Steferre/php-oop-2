@@ -31,10 +31,13 @@ require_once("./classes/products/smartTV.php");
 $code = createCCCode();
  */
 //$user = new User("pincoPal", "pinco@gmail.com");
+try {
+    $userPrime = new PrimeUser("pincoPal", "pincogmail.com");
+} catch (Exception $e) {
+    var_dump($e->getMessage());
+}
 
-$userPrime = new PrimeUser("pincoPal", "pinco@gmail.com");
-$newCC = new CreditCard("Pinco Pallino", "25/12/2020", "9999 5555 4444 7777", "12/2021", 805);
-
+/* $newCC = new CreditCard("Pinco Pallino", "25/12/2020", "9999 5555 4444 7777", "12/2021", 805);
 $tv = new SmartTV("Samsung Serie 7", 1, 379.99, "UE43TU7090U", "Samsung");
 $tv2 = new SmartTV("LG UHD TV", 1, 449.90, "43UP78006LB", "LG");
 
@@ -42,15 +45,15 @@ $userPrime->addCC($newCC);
 
 //$userPrime->setDiscount(379.99);
 
-$carrello = new Cart($userPrime, false);
+//$carrello = new Cart($userPrime, false);
 $carrello->addProduct($tv);
 $carrello->addProduct($tv2);
 $carrello->findTotalPrice();
+ */
 
-
-var_dump($userPrime);
-var_dump($carrello);
-var_dump($newCC);
+//var_dump($userPrime);
+//var_dump($carrello);
+//var_dump($newCC);
 
 
 

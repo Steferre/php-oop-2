@@ -13,12 +13,23 @@ class Product {
 
    // set
    public function setName($value) {
+       if(is_numeric($value)) {
+          throw new Exception("Il nome inserito non e' valido!");
+       }
+    
        $this->name = $value;
-   }
+    }
     public function setQuantity($value) {
+        if(!is_numeric($value)) {
+            throw new Exception("Il dato inserito non e' valido!");
+        }
         $this->quantity = $value;
     }
+
     public function setPrice($value) {
+        if(!is_numeric($value)) {
+            throw new Exception("Il dato inserito non e' valido!");
+        }
         $this->price = $value;
     }
 
